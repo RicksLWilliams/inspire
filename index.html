@@ -14,7 +14,7 @@
 
 <body id="bg-image" class=".bg">
 	<div id="weather">
-		Your Weather Template
+		<div> the temp</div>
 	</div>
 
 	<div id="quote">
@@ -29,7 +29,14 @@
 
 		</div>
 
-		<main class="container-fluid bg-secondary text-warning">
+		<main class="container-fluid bg-transparent text-warning">
+
+			<div class="row">
+				<div class="col12">
+					<button class="btn btn-primary" onclick="app.imageController.testImage()" >press me</button>
+				</div>
+			</div>
+
 			<div class="row">
 
 				<!-- draw Lists injects in here -->
@@ -59,6 +66,11 @@
 							<h5>${this.listItem[i]}</h5>
 						</dd>
 					</dl>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col12">
+					<button class="btn"></button>
 				</div>
 			</div>
 

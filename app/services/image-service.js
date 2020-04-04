@@ -18,7 +18,10 @@ class ImageService {
     imgApi.get()
     //TODO Handle this response from the server
     .then(res => {
-      console.log(res.data.data)
+      console.log(res.data)
+      console.log(res.data.url)
+      let image = new Image(res.data)
+      store.commit("image", image)
       //let todos = res.data.data.map(rawTodorData => new ToDo(rawTodorData))
       //store.commit('todos', todos)
     })

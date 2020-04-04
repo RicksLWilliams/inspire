@@ -2,16 +2,14 @@
 
 export default class Image {
   constructor(data) {
-    this.img = data.sprites ? data.sprites.front_shiny || '' : data.img || ''
+    this.img = data.url
 
   }
 
   get Template() {
-      return /*html*/ `
+      return /*html*/  `
   <div class="col-4">
-      <img src="${this.img}" alt="">
-      <h5 class="text-capitalize">${this.name}</h5>
-      <p>Weight: ${this.weight}</p>
+      <img src="{this.img}" alt="">
       <button class="btn btn-block btn-danger" onclick="app.pokemonController.catchActivePokemon()">Catch</button>
   </div>
       `
