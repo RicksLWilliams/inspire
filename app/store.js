@@ -1,7 +1,10 @@
 import Weather from "./models/weather.js";
 import ToDo from "./models/todo.js";
+import Image from "./models/image.js";
 
 let _state = {
+  /**@type {Image} */
+  image:{},
   /**@type {Weather} */
   weather: new Weather({ name: "loading", main: { temp: 0.0 } }), //temporary fake data
   /**@type {ToDo[]}*/
@@ -12,6 +15,7 @@ let _state = {
  * @type {{[x:string]: function[]}}
  */
 let _listeners = {
+  image: [],
   weather: [],
   todos: []
 };
