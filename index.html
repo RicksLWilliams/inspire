@@ -18,7 +18,7 @@
 	</div>
 
 	<div id="quote">
-		The Quote
+		<div>The Quote</div>
 	</div>
 
 	<div>
@@ -41,13 +41,9 @@
 
 				<!-- draw Lists injects in here -->
 				<div class="col-4 border border-warning rounded shadow">
-					<button></button>
-					<button type="button" class="close text-danger" onclick="app.listController.delete('${this.id}')">
-						<span>&times;</span>
-					</button>
+
 					<h1>To Do List</h1>
-					<input type="checkbox" name="" id="" onclick="app.listController.delete('${this.id}')">
-					<input type="checkbox" class="form-check-input" id="done" >
+
 					<form onsubmit="app.todoController.addTodo(event)">
 						<div class="form-group">
 							<label for="description">List Item:</label>
@@ -55,22 +51,9 @@
 								aria-describedby="helpId">
 						</div>
 					</form>
+					
 					<h5 id="todos2">List Items:</h5>
-					<dl>
-						<span>${this.listItems}</span>
-						<dd>
-							<button type="button" class="close text-danger"
-								onclick="app.listController.deleteListItem('${listId}','${index}')">
-								<span>&times;</span>
-							</button>
-							<h5>${this.listItem[i]}</h5>
-						</dd>
-					</dl>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col12">
-					<button class="btn"></button>
+						<!-- draw Lists injects in here -->
 				</div>
 			</div>
 

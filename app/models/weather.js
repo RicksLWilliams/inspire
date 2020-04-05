@@ -18,7 +18,7 @@ export default class Weather {
       <div> ${this.city}</div>
       <div> ${this.kelvin}</div>
     `
-}
+  }
 
 
 }
