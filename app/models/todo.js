@@ -15,8 +15,9 @@ export default class ToDo {
 
     return `
     <div class="form-check">
-    <input type="checkbox" class="form-check-input" name="" id="done" onclick="app.todoController.toggleTodoStatus('${this._id}')">
-    <label class="form-check-label" for="done"><h5>${this.description}</h5></label>
+    <input type="checkbox" class="form-check-input" name="" id="done" >
+    <label class="form-check-label ${(this.completed? "bg-success": "")}
+    " for="done" onclick="app.todoController.toggleTodoStatus('${this._id}')"><h5>${this.description}</h5></label>
     <button type="button" class="close text-danger" onclick="app.todoController.removeTodo('${this._id}')">
     <span >&times;</span>
     </button>

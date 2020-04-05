@@ -13,10 +13,41 @@ export default class Weather {
   }
 
 
-  get Template() {
+ // get Template() {
+ //   return /*html*/  `
+ //     <div> ${this.city}</div>
+ //     <div onclick="app.weatherController.nextTemp('fahrenheit')" > ${this.kelvin} kelvin</div>
+ //   `
+ // }
+
+  nextTemp(temp) {
+    let temperature = 0
+    let tempClick = ""
+
+    switch (temp) {
+      case 'kelvin':
+        temperature  = this.kelvin;
+        tempClick = ` onclick="app.weatherController.nextTemp('fahrenheit')"`
+
+        break;
+      case 'fahrenheit':
+        temperature  = Math.round( this.kelvin * 9 / 5 -459.67)
+        tempClick = ` onclick="app.weatherController.nextTemp('celsius')"`
+
+        break;
+      case 'celsius':
+        temperature  = Math.round( this.kelvin -273.15)
+        tempClick = ` onclick="app.weatherController.nextTemp('kelvin')"`
+
+        break;
+
+      default:
+        break;
+    }
+
     return /*html*/  `
       <div> ${this.city}</div>
-      <div> ${this.kelvin}</div>
+      <div ${tempClick} > ${temperature} ${temp}</div>
     `
   }
 

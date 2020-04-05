@@ -13,9 +13,8 @@ function _drawTodos() {
 
   //document.getElementById('todos').innerHTML = template
   document.getElementById('todos2').innerHTML = template
-
-
-
+  document.getElementById("listCount").innerText = `To Do List(${store.State.todos.length})`
+  
 }
 
 export default class TodoController {

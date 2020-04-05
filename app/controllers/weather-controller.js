@@ -8,11 +8,15 @@ import store from "../store.js";
 function _drawWeather() {
   console.log("THE WEATHER MAN SAYS:", store.State.weather);
   //let weather = store.State.weather.Template
-  document.getElementById("weather").innerHTML = store.State.weather.Template
+  //document.getElementById("weather").innerHTML = store.State.weather.Template
+  document.getElementById("weather").innerHTML = store.State.weather.nextTemp("fahrenheit")
 }
+
+
 export default class WeatherController {
   constructor() {
     store.subscribe("weather", _drawWeather);
     WeatherService.getWeather();
   }
+
 }
