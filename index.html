@@ -13,26 +13,22 @@
 </head>
 
 <body id="bg-image" class=".bg">
-	<div id="weather">
-		<div> the temp</div>
-	</div>
 
-	<div id="quote">
-		<div>The Quote</div>
-	</div>
 
-	<div>
-		A Todo List
-		<div id="todo-error"></div>
-		<form onsubmit=""></form>
-		<div id="todos">
-
-		</div>
 
 		<main class="container-fluid bg-transparent text-warning">
 
 			<div class="row">
-				<div class="col12">
+				<div class="col-12">
+					<div id="quote" class="text-center">
+						<div>The Quote</div>
+					</div>
+				</div>
+			</div>
+
+
+			<div class="row">
+				<div class="col-12">
 					<button class="btn btn-primary" onclick="app.imageController.testImage()" >press me</button>
 				</div>
 			</div>
@@ -55,6 +51,17 @@
 					<h5 id="todos2">List Items:</h5>
 						<!-- draw Lists injects in here -->
 				</div>
+
+				<div class="col-8">
+					<div id="weather" class="text-right">
+						<div> the temp</div>
+					</div>
+
+				</div>
+
+
+
+
 			</div>
 
 		</main>

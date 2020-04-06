@@ -1,3 +1,7 @@
+//import store from "../store";
+
+import store from "../store.js";
+
 export default class Weather {
   constructor(data) {
     console.log('[RAW WEATHER API DATA]', data);
@@ -13,37 +17,40 @@ export default class Weather {
   }
 
 
- // get Template() {
- //   return /*html*/  `
- //     <div> ${this.city}</div>
- //     <div onclick="app.weatherController.nextTemp('fahrenheit')" > ${this.kelvin} kelvin</div>
- //   `
- // }
+  get Template() {
+    return /*html*/  `
+      <div> ${this.city}</div>
+      <div onclick="app.weatherController.nextTemp('fahrenheit')" > ${this.kelvin} kelvin<///<div>
+     `
+  }
 
   nextTemp(temp) {
-    let temperature = 0
+    let tempKelvin = store.State.weather.kelvin
+    let temperature = store.State.weather.kelvin
     let tempClick = ""
-
     switch (temp) {
       case 'kelvin':
-        temperature  = this.kelvin;
+        temperature  = tempKelvin;
         tempClick = ` onclick="app.weatherController.nextTemp('fahrenheit')"`
-
         break;
       case 'fahrenheit':
-        temperature  = Math.round( this.kelvin * 9 / 5 -459.67)
+        temperature  = Math.round( tempKelvin * 9 / 5 -459.67)
         tempClick = ` onclick="app.weatherController.nextTemp('celsius')"`
-
         break;
       case 'celsius':
-        temperature  = Math.round( this.kelvin -273.15)
+        temperature  = Math.round( tempKelvin -273.15)
+        tempClick = ` onclick="app.weatherController.nextTemp('kelvin')"`
+        break;
+      default:
+        temperature  = Math.round( tempKelvin -273.15)
         tempClick = ` onclick="app.weatherController.nextTemp('kelvin')"`
 
         break;
-
-      default:
-        break;
     }
+    console.log(  /*html*/  `
+    <div> ${this.city}</div>
+    <div ${tempClick} > ${temperature} ${temp}</div>
+  `)
 
     return /*html*/  `
       <div> ${this.city}</div>

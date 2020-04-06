@@ -7,7 +7,7 @@ import store from "../store.js";
 
 function _drawQuote(){
   console.log("THE QUOTE MAN SAYS:", store.State.quote);
-  //document.getElementById("quote").innerHTML = store.State.quote.Template
+  document.getElementById("quote").innerHTML = store.State.quote.Template
 }
 
 
